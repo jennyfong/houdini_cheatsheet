@@ -47,5 +47,19 @@ for(int pt=0; pt <npts; pt++){
 }
                         
 foreach(int nearpt; nearpts){
-                        
-                        }                       
+     }                       
+
+# vectors
+vector unit_vector_y = set(0, 1, 0);
+/* If the vector is pointing downward, make it point stright down */
+
+if(dot(unit_vector_y, normalize(v@v) <= 0){
+    v@v = set(0, -1, 0)
+}
+
+# volume distance 
+float dist = volumesample(1, 'collision', @P);
+vector grad = volumegradient(1, 'collision', @P);
+
+  
+   
