@@ -39,6 +39,21 @@ else{
   i@colliding = 0;
 }
 
+vector center = chv("center");
+int handle  = pcopen(1, "P", @P, ch("max_distance"), 1);
+
+center =  pcfilter(handle, "P")  ;
+
+//if(pcnumfound(handle)> 0) @Cd = set(1, 0, 0);
+
+vector len = @P - center;
+
+float amp = pow(fit(length(len), 0, ch("max_distance"), 1, 0), ch("exp")) * min(pcnumfound(handle), 1);
+@N = normalize(len) * amp;
+
+f@density = amp  ;
+ 
+
 ----
 int npts = npoints(0);
 
